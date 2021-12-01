@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html  ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="controller.js"></script>
+     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+     <!-- END GLOBAL MANDATORY STYLES -->
+ 
+     <!-- BEGIN PAGE LEVEL STYLES -->
+     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
+     <link href="plugins/lightbox/photoswipe.css" rel="stylesheet" type="text/css" />
+     <link href="plugins/lightbox/default-skin/default-skin.css" rel="stylesheet" type="text/css" />
+     <link href="plugins/lightbox/custom-photswipe.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body ng-controller="c3">
+
+<div>
+<h1>Bienvenido {{user}}</h1>
+<h2>Examenes de laboratorio</h2>
+
+
+<!--
+
+<ul>
+    <li ng-repeat="item in post">
+        <h3>examen realizado!</h3>
+        <img src={{item.image}} alt="img">
+    </li>
+</ul>
+-->
+<div class="layout-px-spacing">
+    <div class="row" id="cancel-row">
+        <div class="col-lg-12 layout-spacing layout-top-spacing">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                            <h4>Examenes de laboratorios de los ultimos meses...</h4> 
+                        </div>          
+                    </div>
+                </div>
+                <div class="widget-content widget-content-area">
+
+                    <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+
+                        <a ng-repeat="item in post" class="img-1" href={{item.image}} data-size="1600x1068" data-med={{item.image}} data-med-size="1024x683" data-author="">
+                            <img src={{item.image}} alt="image-gallery">
+                            <figure></figure>
+                        </a>
+
+                    </div>
+                        
+
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                        <!-- Background of PhotoSwipe. It's a separate element, as animating opacity is faster than rgba(). -->
+                        <div class="pswp__bg"></div>
+
+                        <!-- Slides wrapper with overflow:hidden. -->
+                        <div class="pswp__scroll-wrap">
+                            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                            <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                            <div class="pswp__container" style="transform: translate3d(0px, 0px, 0px);">
+                                <div class="pswp__item" style="display: block; transform: translate3d(-1773px, 0px, 0px);"><div class="pswp__zoom-wrap" style="transform: translate3d(90px, 44px, 0px) scale(1);"><img class="pswp__img" src="assets/img/1280x857.jpg" style="opacity: 1; width: 1402px; height: 936px;"></div></div>
+                                <div class="pswp__item" style="transform: translate3d(0px, 0px, 0px);"><div class="pswp__zoom-wrap" style="transform: translate3d(1064.66px, 166.391px, 0px) scale(0.343646);"><img class="pswp__img pswp__img--placeholder" src="assets/img/1280x857.jpg" style="width: 1404px; height: 936px; display: none;"><img class="pswp__img" src="assets/img/1280x857.jpg" style="display: block; width: 1404px; height: 936px;"></div></div>
+                                <div class="pswp__item" style="display: block; transform: translate3d(1773px, 0px, 0px);"><div class="pswp__zoom-wrap" style="transform: translate3d(314px, 44px, 0px) scale(1);"><img class="pswp__img" src="assets/img/1280x857.jpg" style="opacity: 1; width: 956px; height: 956px;"></div></div>
+                            </div>
+
+                            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                            <div class="pswp__ui pswp__ui--fit pswp__ui--hidden">
+
+                                <div class="pswp__top-bar">
+
+                                    <!--  Controls are self-explanatory. Order can be changed. -->
+                                    <div class="pswp__counter">3 / 6</div>
+                                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                                    <div class="pswp__preloader">
+                                        <div class="pswp__preloader__icn">
+                                          <div class="pswp__preloader__cut">
+                                            <div class="pswp__preloader__donut"></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pswp__share-modal pswp__single-tap pswp__share-modal--hidden">
+                                    <div class="pswp__share-tooltip"><a href="https://www.facebook.com/sharer/sharer.php?u=file%3A%2F%2F%2FD%3A%2Fcork%2FHTML%2Fltr%2Fdemo2%2Fcomponent_lightbox.html%23%26gid%3D1%26pid%3D3" target="_blank" class="pswp__share--facebook">Share on Facebook</a><a href="https://twitter.com/intent/tweet?text=Dummy%20caption.%20It's%20Greek%20to%20you.%20Unless%2C%20of%20course%2C%20you're%20Greek%2C%20in%20which%20case%2C%20it%20really%20makes%20no%20sense.&amp;url=file%3A%2F%2F%2FD%3A%2Fcork%2FHTML%2Fltr%2Fdemo2%2Fcomponent_lightbox.html%23%26gid%3D1%26pid%3D3" target="_blank" class="pswp__share--twitter">Tweet</a><a href="http://www.pinterest.com/pin/create/button/?url=file%3A%2F%2F%2FD%3A%2Fcork%2FHTML%2Fltr%2Fdemo2%2Fcomponent_lightbox.html%23%26gid%3D1%26pid%3D3&amp;media=assets%2Fimg%2F1280x857.jpg&amp;description=Dummy%20caption.%20It's%20Greek%20to%20you.%20Unless%2C%20of%20course%2C%20you're%20Greek%2C%20in%20which%20case%2C%20it%20really%20makes%20no%20sense." target="_blank" class="pswp__share--pinterest">Pin it</a><a href="assets/img/1280x857.jpg" target="_blank" class="pswp__share--download" download="">Download image</a></div> 
+                                </div>
+                                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                </button>
+                                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                </button>
+                                <div class="pswp__caption">
+                                    <div class="pswp__caption__center"><br><small></small></div>
+                                </div>
+
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+ <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+ <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+ <script src="bootstrap/js/popper.min.js"></script>
+ <script src="bootstrap/js/bootstrap.min.js"></script>
+ <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+ <script src="assets/js/app.js"></script>
+ 
+ <script>
+     $(document).ready(function() {
+         App.init();
+     });
+ </script>
+ <script src="assets/js/custom.js"></script>
+ <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+ <!-- BEGIN PAGE LEVEL SCRIPTS -->
+ <script src="plugins/lightbox/photoswipe.min.js"></script>
+ <script src="plugins/lightbox/photoswipe-ui-default.min.js"></script>
+ <script src="plugins/lightbox/custom-photswipe.js"></script>
+ <!-- END PAGE LEVEL SCRIPTS -->
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/Mycss.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body ng-controller="c2">
+
+    <div ng-show="carga == 1">
+
+         <h1>cargando...</h1>
+
+    </div>
+
+<div  class="div_container">
+
+<div class="div_c">
+
+<h1>Bienvenido</h1>
+<form>
+    <label>Usuario</label>
+    <input type="text" ng-model="user">
+    <label>contraseña</label>
+    <input type="text" ng-model="contrasena">
+    <button ng-click="verificarDatos()">Iniciar seccion</button>
+
+    <div ng-show="error1 == true">
+
+    <p style="color: red">Usuario o contraseña incorrectas</p>
+
+    </div>
+
+    <div ng-show="error2 == true">
+
+    <p style="color: red">campo 1 o campo 2 vacios</p>
+
+    </div>
+
+    <div ng-show="mensajeDeError != null">
+
+        <p style="color: red">{{mensajeDeError}}</p>
+    
+     </div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

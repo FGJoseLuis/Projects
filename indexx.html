@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="c1">
+
+
+
+<h3>agregar</h3>
+<input type="text" ng-model="cometariosNuevos.comentario">
+<input type="text" ng-model="cometariosNuevos.user">
+<button ng-click="agreagarComentario()">
+    agregar
+</button>
+
+
+<h3>comentarios</h3>
+  <ul>
+
+    <li ng-repeat="item in comentarios">
+        {{item.comentario}} -<strong>{{item.user}}</strong>
+    </li>
+
+</ul>
+<img src={{nombre}}>
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+body{
+
+background-image: url(../../LabplusSys/wwwroot/image/image.png);
+background-repeat: no-repeat;
+background-size: cover;
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+height: 1050px;
+background-attachment: fixed;
+
+
+}
+h1,label{
+
+    color: white !important;
+
+}
+
+.div_container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.div_c{
+    
+    padding: 20px;
+    border-radius: 4px;
+    background-color: gray;
+
+}
